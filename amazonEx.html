@@ -38,23 +38,32 @@
       </div>
     </section>
     <script>
-      let likesBtn=document.getElementById('likesBtn');
+     let likesBtn=document.getElementById('likesBtn');
       let dislikesBtn=document.getElementById('dislikesBtn');
       let Likes_display=document.getElementById('Likes_display');
-      let likes=1;
+ //after refresh also count value will show as same because we permanently storing count(likes) in localstorage.
+      let likes=localStorage.getItem('likes')?localStorage.getItem('likes'):1;
+      localStorage.setItem('likes',likes)
       Likes_display.textContent=likes;
+      //after refresh also count value will show as same because we permanently storing count(dislikes) in localstorage.
       let dislikes_display=document.getElementById('dislikes_display');
-      let dislikes=1;
+      //when value is null(false)return value as 1 if true value then return that value only
+      let dislikes=localStorage.getItem('dislikes')?localStorage.getItem('dislikes'):1;
+      localStorage.setItem('dislikes',dislikes)
       dislikes_display.textContent=dislikes;
+
       likesBtn.addEventListener('click',()=>{
         likes++;
         Likes_display.textContent=likes;
+        //after clicking whatever the count it will be stored, not set to 1
+        localStorage.setItem('likes',likes)
       })
       dislikesBtn.addEventListener('click',()=>{
         dislikes++;
         dislikes_display.textContent=dislikes;
+        localStorage.setItem('dislikes',dislikes)
       })
-
     </script>
 </body>
+
 </html>
