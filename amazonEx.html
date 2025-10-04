@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="#">Amazon</a>
+  </div>
+</nav>
+  <section>
+  
+    <div class="mt-5 w-25 m-auto">
+      <div class="card">
+      <div class="card h-100">
+        <!-- Card Image -->
+        <img width="100%"src="https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjBpcGhvbmV8ZW58MHx8MHx8fDA%3D" 
+             class="card-img-top" alt="Product Image">
+      </div>
+        <!-- Card Body -->
+        <div class="card-body text-center ">
+         <div class="row">
+          <div class="col-6">
+            <h6>Likes:<span id="likesBtn"><i class="bi bi-hand-thumbs-up-fill"></i></span></h6>
+            <h3 id="Likes_display"></h3>
+          </div>
+          <div class="col-6">
+            <h6>Dislikes:<span id="dislikesBtn"><i class="bi bi-hand-thumbs-down-fill"></i></span></h6>
+            <h3 id="dislikes_display"></h3>
+          </div>
+         </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      let likesBtn=document.getElementById('likesBtn');
+      let dislikesBtn=document.getElementById('dislikesBtn');
+      let Likes_display=document.getElementById('Likes_display');
+      let likes=1;
+      Likes_display.textContent=likes;
+      let dislikes_display=document.getElementById('dislikes_display');
+      let dislikes=1;
+      dislikes_display.textContent=dislikes;
+      likesBtn.addEventListener('click',()=>{
+        likes++;
+        Likes_display.textContent=likes;
+      })
+      dislikesBtn.addEventListener('click',()=>{
+        dislikes++;
+        dislikes_display.textContent=dislikes;
+      })
+
+    </script>
+</body>
+</html>

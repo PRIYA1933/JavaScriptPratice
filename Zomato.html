@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zomato Items</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        padding-top: 20px;
+        background-color: aliceblue;
+
+    }
+    .navbar
+    {
+        background-color:#5d99ce;
+        font-weight: 500;
+        font-style: italic;
+    
+    }
+    .navbar-brand
+    {
+        
+        font-weight: bold;
+    }
+    .table{
+        background-color: antiquewhite;
+
+      
+    }
+
+    th {
+      background-color: #f2f2f2;
+    
+    }
+    .table img{
+        width:70px;
+        height:70px;
+        object-fit: cover;
+        
+    }
+    .quantity-buttons button 
+    {
+        width: 30px;
+        height: 30px;
+        font-weight: bold;
+    }
+
+</style>
+<body>
+        <nav class="navbar">
+            <span class="navbar-brand">Zomato</span>
+        </nav>
+        <div class="container mt-4">
+            <h3>Items:-</h3>
+            <p>Biryani is a flavorful South Asian rice-based dish, typically made with spices, basmati rice, and meat, fish, eggs, or vegetables. The name originates from the Persian word "beryān," meaning "fried" or "roasted,"</p>
+
+            <table class="table table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Zid</th>
+                        <th>Name</th>
+                        <th>Img</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>101</td>
+                        <td>Chicken Biriyani</td>
+                        <td><img src="D:\Javascript\Basics\images\Chicken-Biryani-Recipe-500x500.jpg" alt="Chicken Biriyani"></td>
+                        <td> ₹ 369/-</td>
+                        <td class="quantity-buttons">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button class="btn btn-danger btn-sm mr-2" onclick="changeQty(-1)">-</button>
+                                <span id="qty"> 1 </span>
+                                <button class="btn btn-success btn-sm ml-2" onclick="changeQty(1)">+</button> 
+                            </div>
+                        </td>
+
+                        <td>₹ <span id="totalPrice">369</span>/-</td>
+                     </tr>
+                </tbody>
+            </table>
+            <script>
+              let quantity=1;
+              const unitprice=369;
+              function changeQty(change){
+                quantity+=change;
+                if(quantity<1)
+                quantity=0;
+              document.getElementById('qty').innerText=quantity;
+              document.getElementById('totalPrice').innerText=quantity*unitprice;
+              }
+            </script>
+        </div>

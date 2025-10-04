@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Count:<span id="display"></span></h2>
+  <button id="inc">Increment</button>
+  <button id="dec">Decrement</button>
+  <script>
+    let display=document.getElementById('display');
+    let count=1;
+    display.textContent=count;
+    let inc=document.getElementById('inc');
+      let dec=document.getElementById('dec');
+      inc.addEventListener('click',()=>{
+        count++;
+        display.textContent=count;
+      })
+        dec.addEventListener('click',()=>{
+          if(count>1)
+        count--;
+        display.textContent=count;
+      })
+    
+  </script>
+</body>
+</html>
